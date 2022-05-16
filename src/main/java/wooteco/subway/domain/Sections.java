@@ -123,12 +123,6 @@ public class Sections {
         }
     }
 
-//    private void validateNoneStation(List<Section> bucket) {
-//        if (bucket.isEmpty()) {
-//            throw new NotFoundException("[ERROR] 구간들중에 해당 역을 찾을수 없습니다.");
-//        }
-//    }
-
     public Optional<Section> findTargetWithNotTerminal(Station upStation, Station downStation) {
         return sections.stream()
                 .filter(section -> section.isSameUpStation(upStation) || section.isSameDownStation(downStation))
