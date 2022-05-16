@@ -94,7 +94,7 @@ public class LineRepositoryImpl implements LineRepository {
 
     @Override
     public boolean existByName(String name) {
-        final String sql = "SELECT * FROM line WHERE name = :name";
+        final String sql = "SELECT * FROM line WHERE name = :name limit 1";
         SqlParameterSource parameters = new MapSqlParameterSource("name", name);
         List<Line> lines = namedParameterJdbcTemplate.query(sql, parameters, rowMapper());
         return !lines.isEmpty();
