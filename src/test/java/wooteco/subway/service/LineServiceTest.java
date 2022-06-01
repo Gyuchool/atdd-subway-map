@@ -70,18 +70,18 @@ public class LineServiceTest {
                 () -> assertThat(lineResponses.get(0).getStations()).hasSize(노선에_포함된_모든_역의_개수)
         );
     }
-
-    @DisplayName("노선을 조회한다.")
-    @Test
-    void showLine() {
-        Line line = lineRepository.findById(LINE_ID).get();
-        LineResponse lineResponse = lineService.getLine(line.getId());
-
-        assertAll(
-                () -> assertThat(lineResponse.getName()).isEqualTo("2호선"),
-                () -> assertThat(lineResponse.getColor()).isEqualTo("bg-green-600")
-        );
-    }
+//
+//    @DisplayName("노선을 조회한다.")
+//    @Test
+//    void showLine() {
+//        Line line = lineRepository.findById(LINE_ID).get();
+//        LineResponse lineResponse = lineService.getLine(line.getId());
+//
+//        assertAll(
+//                () -> assertThat(lineResponse.getName()).isEqualTo("2호선"),
+//                () -> assertThat(lineResponse.getColor()).isEqualTo("bg-green-600")
+//        );
+//    }
 
     @DisplayName("노선을 업데이트 한다.")
     @Test
